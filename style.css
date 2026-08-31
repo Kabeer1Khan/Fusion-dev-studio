@@ -684,7 +684,7 @@ body {
 }
 
 .carousel {
-  margin: 220px auto;
+  margin: 240px auto;
   width: 80%;
   display: flex;
   overflow-x: hidden;
@@ -1212,6 +1212,10 @@ body {
 
 /* ---- Mobile (<=480px) ---- */
 @media (max-width: 480px) {
+  .carousel{
+    margin: 130px auto;
+  }
+
   .ourservices {
     margin-top: 25%;
     margin-left: 4%;
