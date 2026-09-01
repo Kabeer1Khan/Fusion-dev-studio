@@ -684,7 +684,7 @@ body {
 }
 
 .carousel {
-  margin: 240px auto;
+  margin: 250px auto;
   width: 80%;
   display: flex;
   overflow-x: hidden;
@@ -715,7 +715,7 @@ body {
 }
 
 .ourservices {
-  margin-top: 16%;
+  margin-top: 14%;
   margin-left: 10%;
   margin-right: 10%;
 }
@@ -3445,5 +3445,45 @@ body {
     opacity: 1 !important;
     filter: none !important;
     transform: none !important;
+  }
+}
+
+
+/* ===== Laptop screens only (~1025px–1550px) ===== */
+@media (min-width: 1025px) and (max-width: 1550px) {
+
+  /* ---- Hero: keep the near-square shape (like the original 48%x48%)
+     so the photo isn't cropped left/right, just nudge it up and give
+     the section extra bottom room so it isn't clipped ---- */
+  .hero-section {
+    padding-bottom: 120px;
+  }
+
+  .hero-image1 {
+    top: 25%;
+    right: 5%;
+    width: 46%;
+    height: 56%;
+  }
+
+  /* ---- About: only give the SECTION a positioning context and
+     anchor the image to its bottom. No display:flex here, so
+     .start-sec3 (the "ABOUT US" label) and .about_content are
+     completely untouched and stay exactly where they always were. ---- */
+  .aboutUs {
+    position: relative;
+    padding-bottom: 0px;
+  }
+
+  .about_image {
+    top: 40%;
+    bottom: 0;
+    left: 55%;
+    width: 30%;
+    height: 220px;
+  }
+
+  .carousel{
+    margin: 20px auto;
   }
 }
