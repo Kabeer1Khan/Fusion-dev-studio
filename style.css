@@ -472,6 +472,8 @@ body {
 
 .hero-image1 {
   position: absolute;
+  top: 35%;
+  right: 5%;
   width: 45%;
   height: 45%;
   background-image: url("assets/hero image/building.webp");
@@ -3452,24 +3454,54 @@ body {
 
 
 /* ===== Laptop screens only (~1025px–1550px) ===== */
-@media (min-width: 1025px) and (max-width: 1550px) {
+@media (min-width: 1024px) and (max-width: 1550px) {
+  html,
+body {
+  min-height: 300dvh;
+  font-family: "Segoe UI", Arial, sans-serif;
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
 
-  /* ---- Hero: keep the near-square shape (like the original 48%x48%)
-     so the photo isn't cropped left/right, just nudge it up and give
-     the section extra bottom room so it isn't clipped ---- */
+  .hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 39%;
+}
+
   .hero-section {
     padding-bottom: 120px;
   }
 
   .hero-image1 {
-    top: 30%;
-    right: 5%;
+    top: 20%;
+    right: 10%;
+    width: 45%;
+    height: 40%;
   }
 
-  /* ---- About: only give the SECTION a positioning context and
-     anchor the image to its bottom. No display:flex here, so
-     .start-sec3 (the "ABOUT US" label) and .about_content are
-     completely untouched and stay exactly where they always were. ---- */
+  .hero-claud{
+    top: 32%;
+    left: 45%;
+    width: 8%;
+    height: 5%;
+  }
+
+  .hero-claud2{
+    top: 32%;
+    left: 82%;
+    width: 10%;
+    height: 6%;
+  }
+
+  .hero-claud3{
+    top: 20%;
+    left: 75%;
+    width: 8%;
+    height: 5%;
+  }
+
   .aboutUs {
     position: relative;
     padding-bottom: 0px;
@@ -3478,7 +3510,7 @@ body {
   .about_image {
     top: 40%;
     bottom: 0;
-    left: 55%;
+    left: 65%;
     width: 30%;
     height: 220px;
   }
@@ -3486,4 +3518,28 @@ body {
   .carousel{
     margin: 20px auto;
   }
+
+  .members_social_links {
+  display: flex;
+  margin-left: 2%;
+  margin-top: 8%;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.tag {
+  width: 90%;
+  margin-top: 10%;
+  padding-left: 13px;
+  padding-right: 10px;
+  padding-bottom: 2px;
+  padding-top: 2px;
+  font-family: "Anta", sans-serif;
+  font-size: 1em;
+  font-weight: 300;
+  background-color: #ffffff10;
+  border: 1px solid rgba(255, 255, 255, 0.137);
+  border-radius: 20px;
+  color: #ffffffb9;
+}
 }
