@@ -476,7 +476,7 @@ body {
   right: 5%;
   width: 45%;
   height: 45%;
-  background-image: url("assets/hero image/building.webp");
+  background-image: url("assets/hero image/ChatGPT Image Sep 5, 2026, 10_49_51 AM (1).webp");
   background-size: cover;
   background-position: center;
   animation: heroIntro 1.2s ease-out forwards;
@@ -494,7 +494,7 @@ body {
     opacity: 1;
   }
 }
-
+/*
 .hero-claud {
   position: absolute;
   top: 45%;
@@ -518,7 +518,7 @@ body {
   background-position: center;
   animation: floatingclaud 2s ease-in-out infinite alternate, heroIntro 1.2s ease-out forwards;
 }
-
+*/
 .hero-claud3 {
   position: absolute;
   top: 23%;
@@ -1929,30 +1929,17 @@ body {
 }
 
 .about_image {
-  background-image: url("assets/about us pics/atom.webp");
+  background-image: url("assets/about us pics/about_img.webp");
   position: absolute;
   top: 310%;
   left: 52%;
-  width: 35%;
-  height: 35%;
+  width: 45%;
+  height: 45%;
   background-size: cover; /* contain ki jagah cover */
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 10px;
   overflow: hidden;
-  animation: updown 2s ease-in-out infinite;
-}
-
-@keyframes updown {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
 }
 
 @media (max-width: 1024px) {
@@ -3478,7 +3465,7 @@ body {
     top: 20%;
     right: 10%;
     width: 45%;
-    height: 40%;
+    height: 53%;
   }
 
   .hero-claud{
@@ -3508,11 +3495,11 @@ body {
   }
 
   .about_image {
-    top: 40%;
+    top: 32%;
     bottom: 0;
-    left: 65%;
-    width: 30%;
-    height: 220px;
+    left: 55%;
+    width: 45%;
+    height: 280px;
   }
 
   .carousel{
