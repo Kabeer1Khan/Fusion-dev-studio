@@ -408,7 +408,7 @@ sendBtn.addEventListener('click', () => {
     cEmail.value = '';
     cMessage.value = '';
   }, 1800);
-});
+
 
 const contactBox = document.querySelector('.contect_box');
 
