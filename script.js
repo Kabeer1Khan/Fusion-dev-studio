@@ -1,3 +1,7 @@
+(function() {
+  emailjs.init("AQA68sGvPAUneml9S");
+})();
+
 const navbar = document.getElementById('navbar');
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
@@ -350,6 +354,44 @@ sendBtn.addEventListener('click', () => {
     });
     return;
   }
+
+  const btnText = sendBtn.querySelector('.btn_text');
+  const icon = sendBtn.querySelector('i');
+
+  sendBtn.disabled = true;
+  btnText.textContent = 'Sending...';
+
+  const templateParams = {
+  name: cName.value.trim(),
+  email: cEmail.value.trim(),
+  message: cMessage.value.trim()
+};
+
+  emailjs.send('service_tz3s4rk', 'template_946c42u', templateParams)
+    .then(() => {
+      sendBtn.classList.add('sent');
+      btnText.textContent = 'Message Sent';
+      icon.classList.replace('fa-paper-plane', 'fa-check');
+
+      setTimeout(() => {
+        sendBtn.classList.remove('sent');
+        sendBtn.disabled = false;
+        btnText.textContent = 'Send Message';
+        icon.classList.replace('fa-check', 'fa-paper-plane');
+        cName.value = '';
+        cEmail.value = '';
+        cMessage.value = '';
+      }, 1800);
+    })
+    .catch((error) => {
+      console.error('EmailJS error:', error);
+      btnText.textContent = 'Failed! Try again';
+      sendBtn.disabled = false;
+      setTimeout(() => {
+        btnText.textContent = 'Send Message';
+      }, 2000);
+    });
+});
 
   const btnText = sendBtn.querySelector('.btn_text');
   const icon = sendBtn.querySelector('i');
