@@ -1,7 +1,3 @@
-(function() {
-  emailjs.init("AQA68sGvPAUneml9S");
-})();
-
 const navbar = document.getElementById('navbar');
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
@@ -364,10 +360,11 @@ sendBtn.addEventListener('click', () => {
   const templateParams = {
   name: cName.value.trim(),
   email: cEmail.value.trim(),
-  message: cMessage.value.trim()
+  message: cMessage.value.trim(),
+  title: 'New Contact Form Message'
 };
 
-  emailjs.send('service_tz3s4rk', 'template_946c42u', templateParams)
+  emailjs.send('service_9idugha', 'template_zezy3wn', templateParams)
     .then(() => {
       sendBtn.classList.add('sent');
       btnText.textContent = 'Message Sent';
@@ -385,8 +382,8 @@ sendBtn.addEventListener('click', () => {
     })
     .catch((error) => {
       console.error('EmailJS error:', error);
-      btnText.textContent = 'Failed! Try again';
       sendBtn.disabled = false;
+      btnText.textContent = 'Failed - Try Again';
       setTimeout(() => {
         btnText.textContent = 'Send Message';
       }, 2000);
@@ -408,7 +405,6 @@ sendBtn.addEventListener('click', () => {
     cEmail.value = '';
     cMessage.value = '';
   }, 1800);
-
 
 const contactBox = document.querySelector('.contect_box');
 
