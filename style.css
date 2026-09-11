@@ -494,31 +494,6 @@ body {
     opacity: 1;
   }
 }
-/*
-.hero-claud {
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  width: 7%;
-  height: 7%;
-  background-image: url("assets/hero image/cloud.webp");
-  background-size: cover;
-  background-position: center;
-  animation: floatingclaud 2s ease-in-out infinite alternate, heroIntro 1.2s ease-out forwards;
-}
-
-.hero-claud2 {
-  position: absolute;
-  top: 28%;
-  left: 85%;
-  width: 10%;
-  height: 10%;
-  background-image: url("assets/hero image/cloud2.webp");
-  background-size: cover;
-  background-position: center;
-  animation: floatingclaud 2s ease-in-out infinite alternate, heroIntro 1.2s ease-out forwards;
-}
-*/
 .hero-claud3 {
   position: absolute;
   top: 23%;
