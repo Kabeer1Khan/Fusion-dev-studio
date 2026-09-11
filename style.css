@@ -3437,31 +3437,10 @@ body {
   }
 
   .hero-image1 {
-    top: 20%;
-    right: 10%;
-    width: 45%;
-    height: 53%;
-  }
-
-  .hero-claud{
-    top: 32%;
-    left: 45%;
-    width: 8%;
-    height: 5%;
-  }
-
-  .hero-claud2{
-    top: 32%;
-    left: 82%;
-    width: 10%;
-    height: 6%;
-  }
-
-  .hero-claud3{
-    top: 20%;
-    left: 75%;
-    width: 8%;
-    height: 5%;
+    top: 23%;
+    right: 15%;
+    width: 35%;
+    height: 43%;
   }
 
   .aboutUs {
