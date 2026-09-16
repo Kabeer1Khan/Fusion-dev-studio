@@ -439,3 +439,36 @@ document.querySelectorAll('.footer_links a[data-service]').forEach(link => {
     openModal(link.getAttribute('data-service'));
   });
 });
+
+const aboutModal = document.getElementById('aboutModal');
+const aboutModalClose = document.getElementById('aboutModalClose');
+const aboutMoreBtn = document.getElementById('aboutMoreBtn');
+
+function openAboutModal() {
+  aboutModal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeAboutModal() {
+  aboutModal.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+if (aboutMoreBtn) {
+  aboutMoreBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    openAboutModal();
+  });
+}
+
+aboutModalClose.addEventListener('click', closeAboutModal);
+
+aboutModal.addEventListener('click', (e) => {
+  if (e.target === aboutModal) closeAboutModal();
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && aboutModal.classList.contains('active')) {
+    closeAboutModal();
+  }
+});

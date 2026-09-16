@@ -3,8 +3,7 @@
   <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anta&family=Commissioner:wght@100..900&family=Fira+Sans:ital,wght@0,100..900;1,100..900&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=IBM+Plex+Sans+JP&family=Miranda+Sans:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mozilla+Text:wght@200..700&family=Noto+Sans+Tai+Viet&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Anta&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 <link rel="stylesheet" href="style.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -193,7 +192,7 @@
          <div class="content_box">
            <div class="image1_box"></div>
            <div class="content">
-             <h3>Business <br> Landing page</h3>
+             <h3>Business <br> Resturent</h3>
              <p class="tag">Custom Website</p>
              <a href="https://fusion-custom-web-project.vercel.app/" target="_blank" class="view_project">View Project</a>
              <div class="arrow_project"><a href="#" ><i class="fa-solid fa-arrow-right"></i></a></div>
@@ -205,9 +204,9 @@
     <div class="content_box">
       <div class="image2_box"></div>
       <div class="content">
-        <h3>Corporate <br> Website</h3>
+        <h3>Barber <br> Website</h3>
         <p class="tag">Custom Website</p>
-        <a href="#" class="view_project">View Project</a>
+        <a href="https://kabeer1khan.github.io/project-1/" target="_blank" class="view_project">View Project</a>
         <div class="arrow_project"><a href="#"><i class="fa-solid fa-arrow-right"></i></a></div>
       </div>
     </div>
@@ -217,9 +216,9 @@
     <div class="content_box">
       <div class="image3_box"></div>
       <div class="content">
-        <h3>E-Commerce <br>Store</h3>
+        <h3>Body <br>Fitness</h3>
         <p class="tag2">Wordpress</p>
-        <a href="#" class="view_project">View Project</a>
+        <a href="https://bright-malasada-8e4ffb.netlify.app" target="_blank" class="view_project">View Project</a>
         <div class="arrow_project"><a href="#"><i class="fa-solid fa-arrow-right"></i></a></div>
       </div>
     </div>
@@ -229,9 +228,9 @@
     <div class="content_box">
       <div class="image4_box"></div>
       <div class="content">
-        <h3>Blog & Magzine <br> Website</h3>
+        <h3>Cafe <br> Website</h3>
         <p class="tag2">Wordpress</p>
-        <a href="#" class="view_project">View Project</a>
+        <a href="https://effervescent-cranachan-43ce32.netlify.app" target="_blank" class="view_project">View Project</a>
         <div class="arrow_project"><a href="#"><i class="fa-solid fa-arrow-right"></i></a></div>
       </div>
     </div>
@@ -275,8 +274,75 @@
         <h3 class="about_h">Building Digital <br> Excellence</h3>
         <p class="about_pera">At Fusion Dev Studio, we create modern websites, WordPress solutions, and 3D experiences that turn ideas into impactful digital products.</p>
         <p class="about_pera">Our team combines creativity, technical expertise, and attention to detail to deliver reliable digital solutions that businesses can trust and grow with.</p>
-        <div class="about_btn"><a href="#">Learn More About Us<i class="fa-solid fa-angle-right"></i></a></div>
+        <div class="about_btn"><a href="#" id="aboutMoreBtn">Learn More About Us<i class="fa-solid fa-angle-right"></i></a></div>
       </div>
+
+
+      <div class="modal-overlay" id="aboutModal">
+  <div class="modal-card about-modal-card">
+    <button class="modal-close" id="aboutModalClose" aria-label="Close">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <div class="modal-header">
+      <h2 class="modal-title">Our Story</h2>
+      <p class="modal-desc">How 4 partners came together to build Fusion Dev Studio</p>
+    </div>
+
+    <div class="about-modal-body">
+      <p class="about-modal-text">
+        Fusion Dev Studio was founded by 4 partners who came together with one shared vision — to build digital products that truly make a difference. From humble beginnings to where we are today, we've stayed up countless nights, overcome technical roadblocks, and learned from every new challenge along the way. Every obstacle has made us stronger and better at what we do.
+      </p>
+      <p class="about-modal-text">
+        We take real pride in everything we deliver. From custom websites to WordPress solutions and detailed 3D models — every project gets the same dedication and attention to detail that we started with on day one.
+      </p>
+
+      <div class="about-modal-stats">
+        <div class="stat-item">
+          <i class="fa-solid fa-users"></i>
+          <h4>4 Partners</h4>
+          <p>United by a shared vision</p>
+        </div>
+        <div class="stat-item">
+          <i class="fa-solid fa-mountain"></i>
+          <h4>Countless Challenges</h4>
+          <p>Faced and overcome together</p>
+        </div>
+        <div class="stat-item">
+          <i class="fa-solid fa-fire"></i>
+          <h4>Full Dedication</h4>
+          <p>In every single project</p>
+        </div>
+      </div>
+
+      <h3 class="about-modal-subheading">What We Offer</h3>
+
+      <div class="about-modal-services">
+        <div class="about-service-item">
+          <div class="about-service-icon"><i class="fa-solid fa-code"></i></div>
+          <div>
+            <h5>Custom Website</h5>
+            <p>Frontend and backend separately, or a complete full-stack website — built exactly the way you need it.</p>
+          </div>
+        </div>
+        <div class="about-service-item">
+          <div class="about-service-icon"><i class="fa-brands fa-wordpress"></i></div>
+          <div>
+            <h5>WordPress Website</h5>
+            <p>Fast, flexible WordPress builds — from simple setups to fully custom themes.</p>
+          </div>
+        </div>
+        <div class="about-service-item">
+          <div class="about-service-icon"><i class="fa-solid fa-cube"></i></div>
+          <div>
+            <h5>3D Modeling</h5>
+            <p>High-quality 3D models for visualization, games, and interactive experiences.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
       <div class="about_image"></div>
     </section>
