@@ -1,38 +1,40 @@
-const navbar = document.getElementById('navbar');
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('navLinks');
-const overlay = document.getElementById('overlay');
+const navbar = document.getElementById("navbar");
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+const overlay = document.getElementById("overlay");
 
 /* navbar stays fixed, background turns glassy/blurred after scrolling down */
 function handleScroll() {
-    if (window.scrollY > 20) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
+  if (window.scrollY > 20) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
 }
 
-window.addEventListener('scroll', handleScroll);
+window.addEventListener("scroll", handleScroll);
 handleScroll();
 
 /* hamburger toggle -> slide menu in from the right */
 function toggleMenu() {
-    hamburger.classList.toggle('active');
-    navLinks.classList.toggle('active');
-    overlay.classList.toggle('active');
-    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+  hamburger.classList.toggle("active");
+  navLinks.classList.toggle("active");
+  overlay.classList.toggle("active");
+  document.body.style.overflow = navLinks.classList.contains("active")
+    ? "hidden"
+    : "";
 }
 
-hamburger.addEventListener('click', toggleMenu);
-overlay.addEventListener('click', toggleMenu);
+hamburger.addEventListener("click", toggleMenu);
+overlay.addEventListener("click", toggleMenu);
 
 /* close menu when a link is clicked (mobile) */
-navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-        if (navLinks.classList.contains('active')) {
-            toggleMenu();
-        }
-    });
+navLinks.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => {
+    if (navLinks.classList.contains("active")) {
+      toggleMenu();
+    }
+  });
 });
 
 /* ================= SERVICE DETAIL MODAL ================= */
@@ -53,9 +55,9 @@ const serviceData = {
           "Contact form integration",
           "1 round of revisions",
           "Delivery in 2 weeks",
-          "Email support"
+          "Email support",
         ],
-        cta: "Choose Basic"
+        cta: "Choose Basic",
       },
       {
         name: "Premium",
@@ -70,9 +72,9 @@ const serviceData = {
           "CMS integration (edit content yourself)",
           "E-commerce ready setup",
           "Unlimited revisions",
-          "Priority support & 4 week delivery"
+          "Priority support & 4 week delivery",
         ],
-        cta: "Choose Premium"
+        cta: "Choose Premium",
       },
       {
         name: "Standard",
@@ -85,11 +87,11 @@ const serviceData = {
           "Contact form + newsletter signup",
           "3 rounds of revisions",
           "Delivery in 3 weeks",
-          "Live chat support"
+          "Live chat support",
         ],
-        cta: "Choose Standard"
-      }
-    ]
+        cta: "Choose Standard",
+      },
+    ],
   },
 
   wordpress: {
@@ -107,9 +109,9 @@ const serviceData = {
           "Basic theme customization",
           "Mobile responsive layout",
           "Delivery in 1 week",
-          "Email support"
+          "Email support",
         ],
-        cta: "Choose Basic"
+        cta: "Choose Basic",
       },
       {
         name: "Premium",
@@ -124,9 +126,9 @@ const serviceData = {
           "WooCommerce store setup",
           "Advanced SEO configuration",
           "Deep customization & animations",
-          "Priority support & 3 week delivery"
+          "Priority support & 3 week delivery",
         ],
-        cta: "Choose Premium"
+        cta: "Choose Premium",
       },
       {
         name: "Standard",
@@ -139,11 +141,11 @@ const serviceData = {
           "Moderate customization",
           "SEO basics configured",
           "Contact & newsletter forms",
-          "Delivery in 2 weeks"
+          "Delivery in 2 weeks",
         ],
-        cta: "Choose Standard"
-      }
-    ]
+        cta: "Choose Standard",
+      },
+    ],
   },
 
   "3d": {
@@ -161,9 +163,9 @@ const serviceData = {
           "Standard file formats (.obj, .fbx)",
           "2 rounds of revisions",
           "Delivery in 1 week",
-          "Email support"
+          "Email support",
         ],
-        cta: "Choose Basic"
+        cta: "Choose Basic",
       },
       {
         name: "Premium",
@@ -178,9 +180,9 @@ const serviceData = {
           "All industry file formats",
           "Game/web optimized exports",
           "Unlimited revisions",
-          "Priority support & fast delivery"
+          "Priority support & fast delivery",
         ],
-        cta: "Choose Premium"
+        cta: "Choose Premium",
       },
       {
         name: "Standard",
@@ -193,28 +195,31 @@ const serviceData = {
           "2 file formats delivered",
           "3 rounds of revisions",
           "Delivery in 10 days",
-          "Live chat support"
+          "Live chat support",
         ],
-        cta: "Choose Standard"
-      }
-    ]
-  }
+        cta: "Choose Standard",
+      },
+    ],
+  },
 };
 
-const serviceModal = document.getElementById('serviceModal');
-const modalClose = document.getElementById('modalClose');
-const modalTitle = document.getElementById('modalTitle');
-const modalDesc = document.getElementById('modalDesc');
-const modalPlans = document.getElementById('modalPlans');
+const serviceModal = document.getElementById("serviceModal");
+const modalClose = document.getElementById("modalClose");
+const modalTitle = document.getElementById("modalTitle");
+const modalDesc = document.getElementById("modalDesc");
+const modalPlans = document.getElementById("modalPlans");
 
 function buildPlanCard(plan) {
   const featuresHTML = plan.features
-    .map(f => `<li><i class="fa-solid fa-circle-check"></i><span>${f}</span></li>`)
-    .join('');
+    .map(
+      (f) =>
+        `<li><i class="fa-solid fa-circle-check"></i><span>${f}</span></li>`,
+    )
+    .join("");
 
   return `
-    <div class="plan-card ${plan.highlighted ? 'plan-premium' : ''}">
-      ${plan.badge ? `<div class="plan-badge">${plan.badge}</div>` : ''}
+    <div class="plan-card ${plan.highlighted ? "plan-premium" : ""}">
+      ${plan.badge ? `<div class="plan-badge">${plan.badge}</div>` : ""}
       <div class="plan-icon"><i class="${plan.icon}"></i></div>
       <div class="plan-name">${plan.name}</div>
       <div class="plan-price">${plan.price}<span> /project</span></div>
@@ -230,77 +235,78 @@ function openModal(serviceKey) {
 
   modalTitle.textContent = data.title + " — Details";
   modalDesc.textContent = data.desc;
-  modalPlans.innerHTML = data.plans.map(buildPlanCard).join('');
+  modalPlans.innerHTML = data.plans.map(buildPlanCard).join("");
 
-  serviceModal.classList.add('active');
-  document.body.style.overflow = 'hidden';
+  serviceModal.classList.add("active");
+  document.body.style.overflow = "hidden";
 }
 
 /* Plan "Choose" buttons -> close modal + scroll to contact form */
-modalPlans.addEventListener('click', (e) => {
-  const planBtn = e.target.closest('.plan-select');
+modalPlans.addEventListener("click", (e) => {
+  const planBtn = e.target.closest(".plan-select");
   if (!planBtn) return;
 
   e.preventDefault();
   closeModal();
 
   setTimeout(() => {
-    const contactSection = document.getElementById('contect');
+    const contactSection = document.getElementById("contect");
     if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      contactSection.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   }, 350); // modal close animation ke baad scroll ho
 });
 
 function closeModal() {
-  serviceModal.classList.remove('active');
-  document.body.style.overflow = '';
+  serviceModal.classList.remove("active");
+  document.body.style.overflow = "";
 }
 
-document.querySelectorAll('.view-btn a[data-service]').forEach(link => {
-  link.addEventListener('click', (e) => {
+document.querySelectorAll(".view-btn a[data-service]").forEach((link) => {
+  link.addEventListener("click", (e) => {
     e.preventDefault();
-    openModal(link.getAttribute('data-service'));
+    openModal(link.getAttribute("data-service"));
   });
 });
 
-modalClose.addEventListener('click', closeModal);
+modalClose.addEventListener("click", closeModal);
 
-serviceModal.addEventListener('click', (e) => {
+serviceModal.addEventListener("click", (e) => {
   if (e.target === serviceModal) closeModal();
 });
 
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && serviceModal.classList.contains('active')) {
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && serviceModal.classList.contains("active")) {
     closeModal();
   }
 });
 
+const serviceCard = document.querySelectorAll(".card1, .card2, .card3");
+const projectCards = document.querySelectorAll(".box1");
+const teamCard = document.querySelectorAll(".team_card");
 
-const serviceCard = document.querySelectorAll('.card1, .card2, .card3');
-const projectCards = document.querySelectorAll('.box1');
-const teamCard = document.querySelectorAll('.team_card');
+const revealCards = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("reveal");
+      }
+    });
+  },
+  { threshold: 0.5 },
+);
 
-const revealCards = new IntersectionObserver((entries) => {
-  entries.forEach(entry =>{
-    if (entry.isIntersecting) {
-      entry.target.classList.add('reveal');
-    }
-  });
-}, {threshold: 0.5
-});
+serviceCard.forEach((card) => revealCards.observe(card));
+projectCards.forEach((card) => revealCards.observe(card));
+teamCard.forEach((card) => revealCards.observe(card));
 
-serviceCard.forEach(card => revealCards.observe(card));
-projectCards.forEach(card => revealCards.observe(card));
-teamCard.forEach(card => revealCards.observe(card))
-
-const filterLinks = document.querySelectorAll('.projects_list a[data-filter]');
-const filterBoxes = document.querySelectorAll('.box1');
+const filterLinks = document.querySelectorAll(".projects_list a[data-filter]");
+const filterBoxes = document.querySelectorAll(".box1");
 const FADE_DURATION = 700; // .box1 ke opacity transition (0.7s) se match
 
 function filterProjects(filter) {
-  filterBoxes.forEach(box => {
-    const match = filter === 'all' || box.dataset.category === filter;
+  filterBoxes.forEach((box) => {
+    const match = filter === "all" || box.dataset.category === filter;
 
     // agar pehle se koi hide-timer pending tha to usko cancel karo
     if (box._hideTimer) {
@@ -309,166 +315,160 @@ function filterProjects(filter) {
     }
 
     if (match) {
-      box.style.display = '';
+      box.style.display = "";
       void box.offsetWidth; // reflow force taake transition trigger ho
-      requestAnimationFrame(() => box.classList.add('reveal'));
+      requestAnimationFrame(() => box.classList.add("reveal"));
     } else {
-      box.classList.remove('reveal');
+      box.classList.remove("reveal");
       box._hideTimer = setTimeout(() => {
-        box.style.display = 'none';
+        box.style.display = "none";
         box._hideTimer = null;
       }, FADE_DURATION);
     }
   });
 }
 
-filterLinks.forEach(link => {
-  link.addEventListener('click', (e) => {
+filterLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
     e.preventDefault();
 
-    filterLinks.forEach(l => l.classList.remove('filter-active'));
-    link.classList.add('filter-active');
+    filterLinks.forEach((l) => l.classList.remove("filter-active"));
+    link.classList.add("filter-active");
 
     filterProjects(link.dataset.filter);
   });
 });
 
+const sendBtn = document.getElementById("sendBtn");
+const cName = document.getElementById("cName");
+const cEmail = document.getElementById("cEmail");
+const cMessage = document.getElementById("cMessage");
 
-
-const sendBtn = document.getElementById('sendBtn');
-const cName = document.getElementById('cName');
-const cEmail = document.getElementById('cEmail');
-const cMessage = document.getElementById('cMessage');
-
-sendBtn.addEventListener('click', () => {
+sendBtn.addEventListener("click", () => {
   if (!cName.value.trim() || !cEmail.value.trim() || !cMessage.value.trim()) {
-    [cName, cEmail, cMessage].forEach(field => {
+    [cName, cEmail, cMessage].forEach((field) => {
       if (!field.value.trim()) {
-        field.style.borderColor = 'rgba(255, 120, 120, 0.7)';
-        setTimeout(() => { field.style.borderColor = ''; }, 900);
+        field.style.borderColor = "rgba(255, 120, 120, 0.7)";
+        setTimeout(() => {
+          field.style.borderColor = "";
+        }, 900);
       }
     });
     return;
   }
 
-  const btnText = sendBtn.querySelector('.btn_text');
-  const icon = sendBtn.querySelector('i');
+  const btnText = sendBtn.querySelector(".btn_text");
+  const icon = sendBtn.querySelector("i");
 
   sendBtn.disabled = true;
-  btnText.textContent = 'Sending...';
+  btnText.textContent = "Sending...";
 
+  // variable names bilkul template ke {{...}} se match hone chahiye
   const templateParams = {
-  name: cName.value.trim(),
-  email: cEmail.value.trim(),
-  message: cMessage.value.trim(),
-  title: 'New Contact Form Message'
-};
+    name: cName.value.trim(),
+    email: cEmail.value.trim(),
+    message: cMessage.value.trim(),
+    title: "New Contact Form Message",
+    time: new Date().toLocaleString(),
+  };
 
-  emailjs.send('service_9idugha', 'template_zezy3wn', templateParams)
+  emailjs
+    .send("service_rmtx3sw", "template_dsgmbvu", templateParams)
     .then(() => {
-      sendBtn.classList.add('sent');
-      btnText.textContent = 'Message Sent';
-      icon.classList.replace('fa-paper-plane', 'fa-check');
+      sendBtn.classList.add("sent");
+      btnText.textContent = "Message Sent";
+      icon.classList.replace("fa-paper-plane", "fa-check");
 
       setTimeout(() => {
-        sendBtn.classList.remove('sent');
+        sendBtn.classList.remove("sent");
         sendBtn.disabled = false;
-        btnText.textContent = 'Send Message';
-        icon.classList.replace('fa-check', 'fa-paper-plane');
-        cName.value = '';
-        cEmail.value = '';
-        cMessage.value = '';
+        btnText.textContent = "Send Message";
+        icon.classList.replace("fa-check", "fa-paper-plane");
+        cName.value = "";
+        cEmail.value = "";
+        cMessage.value = "";
       }, 1800);
     })
     .catch((error) => {
-      console.error('EmailJS error:', error);
-      sendBtn.disabled = false;
-      btnText.textContent = 'Failed - Try Again';
+      console.error("EmailJS error:", error);
+      btnText.textContent = "Failed - Try Again";
       setTimeout(() => {
-        btnText.textContent = 'Send Message';
+        sendBtn.disabled = false;
+        btnText.textContent = "Send Message";
       }, 2000);
     });
 });
 
-  const btnText = sendBtn.querySelector('.btn_text');
-  const icon = sendBtn.querySelector('i');
 
-  sendBtn.classList.add('sent');
-  btnText.textContent = 'Message Sent';
-  icon.classList.replace('fa-paper-plane', 'fa-check');
+const contactBox = document.querySelector(".contect_box");
 
-  setTimeout(() => {
-    sendBtn.classList.remove('sent');
-    btnText.textContent = 'Send Message';
-    icon.classList.replace('fa-check', 'fa-paper-plane');
-    cName.value = '';
-    cEmail.value = '';
-    cMessage.value = '';
-  }, 1800);
-
-const contactBox = document.querySelector('.contect_box');
-
-const revealContact = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('reveal');
-      revealContact.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.2 });
+const revealContact = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("reveal");
+        revealContact.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.2 },
+);
 
 if (contactBox) revealContact.observe(contactBox);
 
-const footerBox = document.querySelector('.footer_box');
+const footerBox = document.querySelector(".footer_box");
 
-const revealFooter = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('reveal');
-      revealFooter.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.15 });
+const revealFooter = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("reveal");
+        revealFooter.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.15 },
+);
 
 if (footerBox) revealFooter.observe(footerBox);
 
 /* footer ke service links bhi modal khole (jaise service cards) */
-document.querySelectorAll('.footer_links a[data-service]').forEach(link => {
-  link.addEventListener('click', (e) => {
+document.querySelectorAll(".footer_links a[data-service]").forEach((link) => {
+  link.addEventListener("click", (e) => {
     e.preventDefault();
-    openModal(link.getAttribute('data-service'));
+    openModal(link.getAttribute("data-service"));
   });
 });
 
-const aboutModal = document.getElementById('aboutModal');
-const aboutModalClose = document.getElementById('aboutModalClose');
-const aboutMoreBtn = document.getElementById('aboutMoreBtn');
+const aboutModal = document.getElementById("aboutModal");
+const aboutModalClose = document.getElementById("aboutModalClose");
+const aboutMoreBtn = document.getElementById("aboutMoreBtn");
 
 function openAboutModal() {
-  aboutModal.classList.add('active');
-  document.body.style.overflow = 'hidden';
+  aboutModal.classList.add("active");
+  document.body.style.overflow = "hidden";
 }
 
 function closeAboutModal() {
-  aboutModal.classList.remove('active');
-  document.body.style.overflow = '';
+  aboutModal.classList.remove("active");
+  document.body.style.overflow = "";
 }
 
 if (aboutMoreBtn) {
-  aboutMoreBtn.addEventListener('click', (e) => {
+  aboutMoreBtn.addEventListener("click", (e) => {
     e.preventDefault();
     openAboutModal();
   });
 }
 
-aboutModalClose.addEventListener('click', closeAboutModal);
+aboutModalClose.addEventListener("click", closeAboutModal);
 
-aboutModal.addEventListener('click', (e) => {
+aboutModal.addEventListener("click", (e) => {
   if (e.target === aboutModal) closeAboutModal();
 });
 
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && aboutModal.classList.contains('active')) {
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && aboutModal.classList.contains("active")) {
     closeAboutModal();
   }
 });
