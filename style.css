@@ -1,12 +1,4 @@
-/* ============================================================
-   FUSION DEV STUDIO — style.css  (refactored)
-   Structure:
-   01 Tokens · 02 Base · 03 Layout helpers · 04 Navbar · 05 Hero
-   06 Tech marquee · 07 Services · 08 Modals · 09 Projects
-   10 About · 11 Team · 12 Contact · 13 Footer · 14 Motion prefs
-   ============================================================ */
 
-/* ============ 01. DESIGN TOKENS ============ */
 :root {
   /* layout */
   --container: 1240px;
