@@ -306,7 +306,8 @@ const FADE_DURATION = 700; // .box1 ke opacity transition (0.7s) se match
 
 function filterProjects(filter) {
   filterBoxes.forEach((box) => {
-    const match = filter === "all" || box.dataset.category === filter;
+    const match =
+  (filter === "all" && !box.dataset.only) || box.dataset.category === filter;
 
     // agar pehle se koi hide-timer pending tha to usko cancel karo
     if (box._hideTimer) {
@@ -471,4 +472,24 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && aboutModal.classList.contains("active")) {
     closeAboutModal();
   }
+});
+
+
+document.querySelectorAll(".box1 .arrow_project a").forEach((arrow) => {
+  arrow.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const card = arrow.closest(".box1");
+    const category = card.dataset.category; 
+
+    filterLinks.forEach((l) => {
+      l.classList.toggle("filter-active", l.dataset.filter === category);
+    });
+
+    filterProjects(category);
+
+    document
+      .getElementById("projects")
+      .scrollIntoView({ behavior: "smooth", block: "start" });
+  });
 });
